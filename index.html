@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title>緊急気象情報配信アカウント-ホームページ</title>
+        <link rel="stylesheet" href="css/style.css">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <script src="main.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <link rel="icon" href="favicons/favicon-16x16.png">
+        <link rel="icon" type="image/png" href="./favicons/android-touch-icon-192x192.png" sizes="192x192">
+    </head>
+    <body>
+        <div>
+          <script>
+            var api_url = 'https://script.google.com/macros/s/AKfycbwp1T6EyVyAEKMzjTgyVBVKiXFtor2vqv-ZiqvUVQC_-1qIYLmSznVLLTaYGDA3S1sP4w/exec';
+            
+            console.log('1');
+            fetch(api_url)
+              .then(function (fetch_data) {
+                return fetch_data.json();
+              })
+              .then(function (json) {
+                for (var i in json) {
+                  console.log('2');
+                  var I = document.getElementsByClassName("I")[0]; // 最初の要素を取得
+                  console.log(I);
+                  if (json[i].situation === 'stop publish') {
+                    // 何も行わない
+                  } else if (json[i].situation === '') {
+                    I.classList.add('not');
+                  } else {
+                    window.location.href = 'https://kinkyuujyouhou-kishou.netlify.app/';
+                  }
+                  
+                  const notElements = document.querySelectorAll('.not');
+                  notElements.forEach(element => {
+                    element.remove();
+                  });
+                }
+              });
+          </script>
+        </div>
+    <div class="N">
+        <header>
+            <header class="header">
+                <!-- ヘッダーロゴ -->
+                <div class="logo"></div>
+              
+                <!-- ハンバーガーメニュー部分 -->
+                <div class="nav">
+              
+                  <!-- ハンバーガーメニューの表示・非表示を切り替えるチェックボックス -->
+                  <input id="drawer_input" class="drawer_hidden" type="checkbox">
+              
+                  <!-- ハンバーガーアイコン -->
+                  <label for="drawer_input" class="drawer_open"><span></span></label>
+              
+                  <!-- メニュー -->
+                  <nav class="nav_content">
+                    <div class="flex">
+                    <figure class="image"><img class="nav_item8" src="./無料のベルアイコン素材 その6 (1).png"></figure>
+                    <div class="right">
+                    <li class="nav_item8" style="list-style-type:none"><a href="#" id="popup-link" style="text-decoration: none; color: black;">お知らせ</a></li>
+                      <div id="popup" class="popup">
+                    <div class="popup-content" style="margin: 0px;">
+                    <h3>お知らせ</h3>
+                    <div class="dtimer" data-sh="6" data-eh="21">
+                    <div class="inner-block" style="overflow: scroll; height: 100px;">
+                      <div class="product-list">
+                        <div class="product-item3 js-based3">
+                            <div class="product-data" style="display: inline; line-height: 5px;">
+                              <div class="class-name" style="justify-content: center;">
+                              <p class="letter1" style="margin: 0px;"></p>
+                              <p class="time" style="margin: 0px;"></p>
+                              </div>
+                              <div class="line-one">
+                              <p class="alternate-text"></p>
+                              </div>
+                              <p class="letter2" style="margin: 0px;"></p>
+                            </div>
+                            </div>
+                        </div>
+                      </div>
+                      </div>
+                    <div class="dtimer" data-sh="21" data-eh="24">
+                      <h3>本日のお知らせの掲載は終了いたしました</h3>
+                    </div>
+                    <div class="dtimer" data-sh="0" data-eh="7">
+                      <h3>本日のお知らせの掲載は7:00からです。</h3>
+                    </div>
+                    <button id="close-popup">閉じる</button>
+                    </div>
+                    </div>
+                    </div>
+                    </div>
+                    <ul class="nav_list" style="padding-top: 0px; margin-top: 0px;">
+                      <li class="nav_item1"><a href="https://kinkyuujyouhou-home.netlify.app">ホーム</a></li>
+                      <li class="nav_item1"><a href="https://kinkyuujyouhou-service-information.netlify.app">サービス情報</a></li>
+                      <details><summary>気象情報</summary>
+                      <li class="nav_item2"></li>
+                      <li class="nav_item2"><a href="https://kinkyuujyouhou-kishou.netlify.app" style="font-size: 30px;">　地震情報</a></li>
+                      <li class="nav_item2"><a href="https://kinkyuujyouhou-weather.netlify.app" style="font-size: 30px;">　避難情報・気象警報</a></li>
+                      </details>
+                      <li class="nav_item3"><a href="https://forms.gle/ax7ZcC6EVyjFaJEw9">お問い合わせ</a></li>
+                      <li class="nav_item4"><a href="https://kinkyuujyouhou-riyoukiyaku.netlify.app">利用規約</a></li>
+                      <li class="nav_item5"><a href="https://forms.gle/5sQQSLosKJ5QbWG78">緊急用伝言サービス</a></li>
+                      <li class="nav_item6"><a href="https://site-haishin.netlify.app">大規模地震配信</a></li>
+                      <li class="nav_item7"><a href="https://kinkyuujyouhou-jalert.netlify.app">Jアラート情報</a></li>
+                      <script>
+                        $(document).ready(function() {
+  // リンクをクリックした時のイベントハンドラを設定します
+  $("#popup-link").click(function(event) {
+    event.preventDefault(); // リンクのデフォルトの挙動をキャンセルします
+    $("#popup").fadeIn(); // ポップアップを表示します
+  });
+
+  // 閉じるボタンがクリックされた時にポップアップを非表示にします
+  $("#close-popup").click(function() {
+    $("#popup").fadeOut();
+  });
+});
+
+                      </script>
+                      <script>
+                        $('div.flex').click(function() {
+                        location.href = $(this).find('a').attr('href');
+                        });
+                        </script>
+                        <script>
+                          var api_url = 'https://script.google.com/macros/s/AKfycbwSmhocawGOXs-e0cdiJ_HhkThItCl6U6qBCpBY8xRs8UUAZHwDWZ1BSFR6MCX-SVcWVw/exec';
+                          
+                          fetch(api_url)
+                            .then(function (fetch_data) {
+                              return fetch_data.json();
+                            })
+                            .then(function (json) {
+                              for (var i in json) {
+                                if (json[i].time && json[i].letter1 && json[i].letter2) {
+                                  var base_element = document.getElementsByClassName('product-item3 js-based3');
+                                  var clone_element = base_element[0].cloneNode(true);
+                                  clone_element.classList.remove('js-based');
+                                  clone_element.querySelector('.time').textContent = json[i].time;
+                                  clone_element.querySelector('.letter1').textContent = json[i].letter1;
+                                  clone_element.querySelector('.letter2').textContent = json[i].letter2;
+                                  console.log(json[i].letter1)
+                          
+                                  // 条件に応じてスタイルを適用
+                                  if (json[i].letter1 === '【障害】') {
+                                    clone_element.querySelector('.letter1').classList.add('red-text');
+                                    clone_element.querySelector('.alternate-text').textContent = '〈発生した障害について〉';
+                                  } else if (json[i].letter1 === '【重要】') {
+                                    clone_element.querySelector('.letter1').classList.add('red-text');
+                                    clone_element.querySelector('.alternate-text').textContent = '〈重要なお知らせについて〉';
+                                  } else if (json[i].letter1 === '【緊急】') {
+                                    clone_element.querySelector('.letter1').classList.add('red-text');
+                                    clone_element.querySelector('.alternate-text').textContent = '〈緊急のお知らせについて〉';
+                                  } else if (json[i].letter1 === '【復旧】') {
+                                    clone_element.querySelector('.letter1').classList.add('green-text');
+                                    clone_element.querySelector('.alternate-text').textContent = '〈復旧した障害につぃて〉';
+                                  } else if (json[i].letter1 === '【お知らせ】') {
+                                    clone_element.querySelector('.letter1').classList.add('black-text');
+                                    // `【お知らせ】`の場合、`.alternate-text`のテキストを空白にする
+                                    clone_element.querySelector('.alternate-text').textContent = '';
+                                  } else {
+                                    var alternateTextElement = clone_element.querySelector('.alternate-text');
+                                    if (alternateTextElement) {
+                                      alternateTextElement.textContent = '';
+                                    }
+                                  }
+                          
+                                  base_element[0].parentNode.appendChild(clone_element);
+                                }
+                              }
+                            });
+                          
+                                                    </script>
+                    </div>
+                    </ul>
+                  </nav>
+            
+            </header>
+                  <h2 style="margin-top: -220px;">地震情報等の掲載、緊急時用のサービスを提供いたします!</h2>
+        </header>
+        <div class="linetital_container">
+            <h2>LINE公式アカウントについて</h2>
+        </div>
+        
+        <div class="line_container">
+            <p>LINE公式アカウントで地震情報等の配信も行っています！！</p>
+            <p>LINE公式アカウント追加は以下のボタンから！！！</p>
+                <a href="https://lin.ee/YD4r8Rs"><img src="./line.png" alt="友だち追加" height="50" border="0"></a>
+        </div>
+        <div class="inner-block" style="height: auto;">
+          <div class="product-list">
+            <div class="product-item2 js-based2">
+                <div class="product-data">
+                  <h2 class="title"></h2>
+                  <p class="bodytext"></p>
+                </div>
+                </div>
+            </div>
+          </div>
+        <script>
+
+var api_url = 'https://script.google.com/macros/s/AKfycbxzgEeiR-5Ha_zlyRutxKxLdfnowV1D1vQcYByQ5wWOoVAdFSwSSvUc0S1lyaklxFW7/exec';
+
+  fetch(api_url)
+    .then(function (fetch_data) {
+      return fetch_data.json();
+    })
+    .then(function (json) {
+      for (var i in json) {
+        if (json[i].title && json[i].bodytext) {
+          var base_element = document.getElementsByClassName('product-item2 js-based2');
+          var clone_element = base_element[0].cloneNode(true);
+          clone_element.classList.remove('js-based2');
+          clone_element.querySelector('.title').textContent = json[i].title;
+          clone_element.querySelector('.bodytext').textContent = json[i].bodytext;
+
+          // 条件に応じてスタイルを適用
+          if (json[i].title === '【障害】') {
+            clone_element.querySelector('.product-data').classList.add('back-red');
+          };
+          if (json[i].title === '掲載停止中') {
+            clone_element.querySelector('.product-data').classList.add('back-red');
+          };
+          if (json[i].title === '【重要】') {
+            clone_element.querySelector('.product-data').classList.add('back-red');
+          };
+          if (json[i].title === '【緊急】') {
+            clone_element.querySelector('.product-data').classList.add('back-red');
+          };
+          if (json[i].title === '【復旧】') {
+            clone_element.querySelector('.product-data').classList.add('back-green');
+          };
+
+          base_element[0].parentNode.appendChild(clone_element);
+        }
+      }
+    });
+
+                          </script>
+        <div class="item02">
+                <h2>更新履歴とお知らせ</h2>
+                <h3 class="I" style="color: red;">※掲載停止中</h3>
+                <p>※5分ごとに、お知らせが更新されます。すぐに更新する際は、サイトごとリロードしてください。</p>
+                <p>※スクロールできます。</p>
+                <div class="dtimer" data-sh="7" data-eh="21" data-em="59">
+
+
+<section class="product" style="line-height: normal;">
+    <div class="inner-block">
+      <ul class="product-list">
+            <table id="product-table" style="width: 100%;">
+        <li class="product-item js-based">
+              <div class="class-name" style="justify-content: center; display: flex; height: 20px;">
+              <p class="letter1"></p>
+              <p class="time"></p>
+              </div>
+              <div class="line-one">
+              <p class="alternate-text"></p>
+              </div>
+              <p class="letter2" style="justify-content: center;"></p>
+            </table>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <style>
+    .product-data p{
+        display: inline;
+    }
+
+    .red-text{
+      color: red;
+    }
+
+    .green-text{
+      color: green;
+    }
+
+    .hide{
+      display: none;
+    }
+
+    .back-green{
+      background-color: rgb(170, 255, 0);
+    }
+  </style>
+  
+
+                      <script>
+                        function fetchData() {
+  var api_url = 'https://script.google.com/macros/s/AKfycbwSmhocawGOXs-e0cdiJ_HhkThItCl6U6qBCpBY8xRs8UUAZHwDWZ1BSFR6MCX-SVcWVw/exec';
+
+  fetch(api_url)
+    .then(function(fetch_data) {
+      return fetch_data.json();
+    })
+    .then(function(json) {
+      var base_element = document.querySelector('.product-item.js-based');
+      var table_body = document.getElementById('product-table');
+
+      // 前回のデータをクリア
+      table_body.innerHTML = '';
+
+      // p要素を作成して表示
+      for (var i in json) {
+        if (json[i].time && json[i].letter1 && json[i].letter2) {
+          var clone_element = base_element.cloneNode(true);
+          clone_element.classList.remove('js-based');
+          clone_element.classList.add('show');
+
+          var time_element = document.createElement('p');
+          time_element.classList.add('time');
+          time_element.textContent = json[i].time;
+          clone_element.querySelector('.time').replaceWith(time_element);
+
+          var letter1_element = document.createElement('p');
+          letter1_element.classList.add('letter1');
+          letter1_element.textContent = json[i].letter1;
+          clone_element.querySelector('.letter1').replaceWith(letter1_element);
+
+          var letter2_element = document.createElement('p');
+          letter2_element.classList.add('letter2');
+          letter2_element.textContent = json[i].letter2;
+          clone_element.querySelector('.letter2').replaceWith(letter2_element);
+
+          table_body.appendChild(clone_element);
+        }
+      }
+      // 特定のクラス名を持つ要素を取得
+var elements = document.getElementsByClassName('js-based');
+
+// 要素にスタイルを適用
+for (var i = 0; i < elements.length; i++) {
+  var element = elements[i];
+  element.style.display = 'none';
+}
+// 特定のクラス名を持つ要素を取得
+var elements = document.getElementsByClassName('show');
+
+// 要素のスタイルから display: none; を削除
+for (var i = 0; i < elements.length; i++) {
+  var element = elements[i];
+  element.style.display = '';
+}
+
+    });
+}
+
+// 初回実行
+fetchData();
+
+// 5分ごとにfetchDataを実行する
+setInterval(fetchData, 60 * 1000); // 5分 = 5 * 60 * 1000 ミリ秒
+                          </script>
+
+                </div>
+                <div class="dtimer" data-sh="22" data-eh="24">
+                    <ul>
+                        <li>本日のお知らせの掲載は終了いたしました</li>
+                    </ul>
+                </div>
+                <div class="dtimer" data-sh="0" data-eh="6" data-em="59">
+                    <ul>
+                        <li>本日のお知らせの掲載は07:00からです</li>
+                    </ul>
+                </div>  
+        </div>        
+        <div class="container">
+            <div class="item01">
+                
+                    <h2>こんにちは!気象情報配信HPへ</h2>
+                    <img src="[公式]緊急気象情報　ロゴ　HP版.png">
+                    <p>
+                        当サイトでは地震情報等の配信や緊急時に役立つサービスを提供しています!
+                    </p>
+                    <h2>提供中のサービス</h2>
+                    <div class="article_container">
+                        <div class="article_item1">
+                            <img src="災害用伝言サービス　イラスト.jpg">
+                            <p>
+                                緊急用伝言サービス
+                            </p>
+                        </div>
+                        <div class="article_item2">
+                            <img src="大規模地震配信サービス　アイコン.jpeg" style="margin-left: 15px;">
+                            <p>
+                                大規模地震配信
+                            </p>
+                        </div>
+                    </div>
+                <h2>サービス状況</h2>
+                <p>記号の見方</p>
+                <div style="display: flex; height: 20px;"><p style="color: rgb(60, 255, 0);">○</p><p>･･･通常通り</p></div><div style="display: flex; height: 20px;"><p style="color: rgb(60, 255, 0);">◎</p><p>･･･障害復旧</p></div><div style="display: flex; height: 20px;"><p style="color: orange;">※○</p><p>･･･一部制限あり</p></div>
+                <div style="display: flex; height: 20px;"><p style="color: red;">✕</p><p>･･･障害発生中(復旧作業中)</p></div><div style="display: flex; height: 20px;"><p style="color: orange;">✕</p><p>･･･制限中</p></div><div style="display: flex; height: 20px; padding-bottom: 25px;"><p>ー</p><p>･･･サービス提供終了・不明</p></div>
+                  <div id="last-updated"></div>
+                <div class="table-container">
+                  <table class="meal-table">
+                    <tbody id="product-table2">
+                      <tr>
+                        <th>お知らせ(掲載)</th>
+                        <td id="situation1" style="font-size: 25px;"></td>
+                      </tr>
+                      <tr>
+                        <th>地震情報(掲載)</th>
+                        <td id="situation2" style="font-size: 25px;"></td>
+                      </tr>
+                      <tr>
+                        <th>気象情報(掲載)</th>
+                        <td id="situation3" style="font-size: 25px;"></td>
+                      </tr>
+                      <tr>
+                        <th>国民保護(掲載)</th>
+                        <td id="situation4" style="font-size: 25px;"></td>
+                      </tr>
+                      <tr>
+                        <th>緊急伝言板</th>
+                        <td id="situation5" style="font-size: 25px;"></td>
+                      </tr>
+                      <tr>
+                        <th>大規模地震配信</th>
+                        <td id="situation6" style="font-size: 25px;"></td>
+                      </tr>
+                      <tr>
+                        <th>地震情報(配信)</th>
+                        <td id="situation7" style="font-size: 25px;"></td>
+                      </tr>
+                      <tr>
+                        <th>気象情報(配信)</th>
+                        <td id="situation8" style="font-size: 25px;"></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                
+                <script>
+                  function fetchData() {
+                    var api_url = 'https://script.google.com/macros/s/AKfycbyg0PznUw7VfJfOEVu-IctS4AcCyTBYWxvPEJSf8e4r125Cnp_X-VPTDuH855kYz8LUcA/exec';
+                
+                    fetch(api_url)
+                      .then(function(fetch_data) {
+                        return fetch_data.json();
+                      })
+                      .then(function(json) {
+                        for (var i = 0; i < json.length; i++) {
+                          if (json[i].kind && json[i].situation) {
+                            var situation_text;
+                            if (json[i].situation === '通常通り') {
+                              situation_text = '○';
+                            } else if (json[i].situation === '障害復旧') {
+                              situation_text = '◎';
+                            } else if (json[i].situation === '一部制限あり') {
+                              situation_text = '※○';
+                            } else if (json[i].situation === '障害発生') {
+                              situation_text = '✕';
+                            } else if (json[i].situation === '制限中') {
+                              situation_text = '✕';
+                            } else if (json[i].situation === '終了') {
+                              situation_text = 'ー';
+                            } else if (json[i].situation === '不明') {
+                              situation_text = 'ー';
+                            }
+                
+                            var situation_id = 'situation' + (i + 1);
+                            var situation_cell = document.getElementById(situation_id);
+                            if (json[i].situation === '通常通り') {
+                              situation_cell.classList.add('green_text')
+                            } else if (json[i].situation === '障害復旧') {
+                              situation_cell.classList.add('green_text')
+                            } else if (json[i].situation === '一部制限あり') {
+                              situation_cell.classList.add('orange_text')
+                            } else if (json[i].situation === '障害発生') {
+                              situation_cell.classList.add('red_text')
+                            } else if (json[i].situation === '制限中') {
+                              situation_cell.classList.add('orange_text')
+                            } else if (json[i].situation === '終了') {
+                              situation_cell.classList.add('black_text')
+                            } else if (json[i].situation === '不明') {
+                              situation_cell.classList.add('black_text')
+                            }
+                            if (situation_cell) {
+                              situation_cell.textContent = situation_text;
+                            }
+                          }
+                          // 最終変更時刻を更新
+        var lastUpdatedElement = document.getElementById('last-updated');
+        if (lastUpdatedElement) {
+          var currentTime = new Date();
+          var formattedTime = currentTime.toLocaleString();
+          lastUpdatedElement.textContent = '最終変更時刻: ' + formattedTime;
+        }
+                        }
+                      });
+                  }
+                
+                  // 初回実行時にデータを取得する
+                  fetchData();
+                
+                  // 10分ごとにfetchDataを実行する
+                  setInterval(fetchData, 10 * 60 * 1000); // 10分 = 10 * 60 * 1000 ミリ秒
+                </script>
+                <style>
+                  .green_text{
+                    color: rgb(24, 202, 0);
+                    background-color: rgb(250 248 231);
+                  }
+                  .orange_text{
+                    color: orange;
+                  }
+                  .red_text{
+                    color: red;
+                  }
+                  .black_text{
+                    color: black;
+                  }
+                </style>
+        </div>
+        </div>
+        <table id="table-data"></table>
+
+        <audio id="audioPlayer" autoplay loop>
+            <source src="#" type="audio/mpeg">
+          </audio>
+          <script src="audio"></script>
+          
+        
+        <footer>
+            <h2>©2023 EWIDE緊急気象情報配信アカウント</h2>
+        </footer>
+      </div>
+    </body>
+</html>

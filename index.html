@@ -412,6 +412,9 @@ table td{
 padding: 35px 40px;
 }
   
+    .remove{
+         line-height: 5px;
+    }
 
 @media screen and (max-width:480px) { 
     header{
@@ -787,6 +790,9 @@ background: rgb(65, 188, 236);
 table td{
 padding: 35px 40px;
 }
+    .remove{
+         line-height: 5px;
+    }
 
 
 }
@@ -810,7 +816,7 @@ padding: 35px 40px;
                   } else if (json[i].situation === '') {
                     I.classList.add('not');
                   } else {
-                    window.location.href = 'https://kinkyuujyouhou-kishou.netlify.app/';
+                    window.location.href = 'https://saigaikinkyuu.github.io/site-earthquake/';
                   }
                   
                   const notElements = document.querySelectorAll('.not');
@@ -849,7 +855,7 @@ padding: 35px 40px;
                     <div class="inner-block" style="overflow: scroll; height: 100px;">
                       <div class="product-list">
                         <div class="product-item3 js-based3">
-                            <div class="product-data" style="display: inline; line-height: 5px;">
+                            <div class="product-data" style="display: inline;">
                               <div class="class-name" style="justify-content: center;">
                               <p class="letter1" style="margin: 0px;"></p>
                               <p class="time" style="margin: 0px;"></p>
@@ -923,6 +929,10 @@ padding: 35px 40px;
                                   clone_element.querySelector('.time').textContent = json[i].time;
                                   clone_element.querySelector('.letter1').textContent = json[i].letter1;
                                   clone_element.querySelector('.letter2').textContent = json[i].letter2;
+                                  var clone_data = clone_erement.querySelectorAll('.product-data');
+                                    clone_data.forEach(function(element) {
+                                    element.classList.add('remove'); // new-classは適用したいクラス名
+                                  };
                                   console.log(json[i].letter1)
                           
                                   // 条件に応じてスタイルを適用

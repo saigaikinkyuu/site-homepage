@@ -1121,22 +1121,22 @@ var api_url = 'https://script.google.com/macros/s/AKfycbxzgEeiR-5Ha_zlyRutxKxLdf
             let Ttext7 = '業務情報ページ';
 
                           var lettertext = json[i].letter;
-          if (lettertext.indexOf(Ttext1) !==-1) {
-              link.setAttribute('href', url1);
-          }else if (lettertext.indexOf(Ttext2) !==-2) {
-              link.setAttribute('href', url2);
-          }else if (lettertext.indexOf(Ttext3) !==-3) {
-              link.setAttribute('href', url3);
-          }else if (lettertext.indexOf(Ttext4) !==-4) {
-              link.setAttribute('href', url4);
-          }else if (lettertext.indexOf(Ttext5) !==-5) {
-              link.setAttribute('href', url5);
-          }else if (lettertext.indexOf(Ttext6) !==-6) {
-              link.setAttribute('href', url6);
-          }else if (lettertext.indexOf(Ttext7) !==-7) {
-              link.setAttribute('href', url7);
+          if (lettertext.includes(Ttext1) !==-1) {
+              link.href = url1;
+          }else if (lettertext.includes(Ttext2) !==-2) {
+              link.href = url2;
+          }else if (lettertext.includes(Ttext3) !==-3) {
+              link.href = url3;
+          }else if (lettertext.includes(Ttext4) !==-4) {
+              link.href = url4;
+          }else if (lettertext.includes(Ttext5) !==-5) {
+              link.href = url5;
+          }else if (lettertext.includes(Ttext6) !==-6) {
+              link.href = url6;
+          }else if (lettertext.includes(Ttext7) !==-7) {
+              link.href = url7;
           }else{
-              link.setAttribute('href', url8);
+              link.href = url8;
           }
 
 

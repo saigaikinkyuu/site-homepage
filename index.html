@@ -1172,12 +1172,14 @@ setInterval(fetchData, 60 * 1000); // 5分 = 5 * 60 * 1000 ミリ秒
             var lettertext3Element2 = document.getElementById('time23');
             var lettertext4Element2 = document.getElementById('time24');
             var lettertext5Element2 = document.getElementById('time25');
+                        console.log(lettertext1Element2)
         
             var lettertext1 = lettertext1Element2.textContent;
             var lettertext2 = lettertext2Element2.textContent;
             var lettertext3 = lettertext3Element2.textContent;
             var lettertext4 = lettertext4Element2.textContent;
             var lettertext5 = lettertext5Element2.textContent;
+                        console.log(lettertext1)
 
             if (lettertext1.includes(Ttext1)) {
                 link1.href = url1;

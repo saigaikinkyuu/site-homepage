@@ -1063,14 +1063,29 @@ var api_url = 'https://script.google.com/macros/s/AKfycbxzgEeiR-5Ha_zlyRutxKxLdf
 
       // p要素を作成して表示
       for (var i in json) {
+    
         if (json[i].time && json[i].letter1 && json[i].letter2) {
+            
+    // 時間表記の変換
+              var timeValue = json[i].time;
+              var date = new Date(timeValue);
+              var hours = date.getHours();
+              var minutes = date.getMinutes();
+              var timeValue = json[i].time;
+              var date = new Date(timeValue);
+              var month = (date.getMonth() + 1).toString().padStart(2, '0');
+              var day = date.getDate().toString().padStart(2, '0');
+              var hours = date.getHours().toString().padStart(2, '0');
+              var minutes = date.getMinutes().toString().padStart(2, '0');
+              var formattedTime = month + '月' + day + '日 ' + hours + ':' + minutes;
+            
           var clone_element = base_element.cloneNode(true);
           clone_element.classList.remove('js-based');
           clone_element.classList.add('show');
 
           var time_element = document.createElement('p');
           time_element.classList.add('time');
-          time_element.textContent = json[i].time;
+          time_element.textContent = formattedTime;
           clone_element.querySelector('.time').replaceWith(time_element);
 
           var letter1_element = document.createElement('p');

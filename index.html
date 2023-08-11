@@ -1091,13 +1091,13 @@ var api_url = 'https://script.google.com/macros/s/AKfycbxzgEeiR-5Ha_zlyRutxKxLdf
           time_element.textContent = formattedTime;
           clone_element.querySelector('.time').replaceWith(time_element);
 
-          var letter1_element = document.createElement('p');
+          var letter1_element = document.createElement('1');
           letter1_element.classList.add('letter1');
           letter1_element.id = 'time' + t;
           letter1_element.textContent = json[i].letter1;
           clone_element.querySelector('.letter1').replaceWith(letter1_element);
 
-          var letter2_element = document.createElement('p');
+          var letter2_element = document.createElement('1');
           letter2_element.classList.add('letter2');
           letter2_element.id = 'time' + t;
           letter2_element.textContent = json[i].letter2;
@@ -1112,19 +1112,21 @@ var api_url = 'https://script.google.com/macros/s/AKfycbxzgEeiR-5Ha_zlyRutxKxLdf
             let url6 = 'https://saigaikinkyuu.github.io/site-Jalert/';
             let url7 = 'https://saigaikinkyuu.github.io/site-business/';
             let url8 = '#';
-          if (letter2_element.indexOf('ホーム')) {
+
+                          var lettertext = json[i].letter;
+          if (lettertext.indexOf('ホーム')) {
               link.setAttribute('href', url1);
-          }else if (letter2_element.indexOf('地震情報掲載ページ')) {
+          }else if (lettertext.indexOf('地震情報掲載ページ')) {
               link.setAttribute('href', url2);
-          }else if (letter2_element.indexOf('気象情報・避難情報ページ')) {
+          }else if (lettertext.indexOf('気象情報・避難情報ページ')) {
               link.setAttribute('href', url3);
-          }else if (letter2_element.indexOf('利用規約')) {
+          }else if (lettertext.indexOf('利用規約')) {
               link.setAttribute('href', url4);
-          }else if (letter2_element.indexOf('大規模地震配信')) {
+          }else if (lettertext.indexOf('大規模地震配信')) {
               link.setAttribute('href', url5);
-          }else if (letter2_element.indexOf('Jアラートページ')) {
+          }else if (lettertext.indexOf('Jアラートページ')) {
               link.setAttribute('href', url6);
-          }else if (letter2_element.indexOf('業務情報ページ')) {
+          }else if (lettertext.indexOf('業務情報ページ')) {
               link.setAttribute('href', url7);
           }else{
               link.setAttribute('href', url8);

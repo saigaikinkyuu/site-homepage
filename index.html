@@ -1385,7 +1385,7 @@ setInterval(fetchData, 60 * 1000); // 5分 = 5 * 60 * 1000 ミリ秒
                               situation_cell.classList.add('green_text')
                             } else if (json[i].situation === '一部制限あり') {
                               situation_cell.classList.add('orange_text')
-                            } else if (json[i].situation === '障害発生') {
+                            } else if (json[i].situation === '障害発生中') {
                               situation_cell.classList.add('red_text')
                             } else if (json[i].situation === '制限中') {
                               situation_cell.classList.add('orange_text')

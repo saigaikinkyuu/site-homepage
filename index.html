@@ -1043,6 +1043,10 @@ var api_url = 'https://script.google.com/macros/s/AKfycbxzgEeiR-5Ha_zlyRutxKxLdf
     .back-green{
       background-color: rgb(170, 255, 0);
     }
+
+    letter3 a{
+        color: gray;
+    }
   </style>
   
 
@@ -1085,23 +1089,27 @@ var api_url = 'https://script.google.com/macros/s/AKfycbxzgEeiR-5Ha_zlyRutxKxLdf
           clone_element.classList.remove('js-based');
           clone_element.classList.add('show');
 
-          var time_element = document.createElement('a');
+          var time_element = document.createElement('p');
           time_element.classList.add('time');
-          time_element.id = 'time' + t;
           time_element.textContent = formattedTime;
           clone_element.querySelector('.time').replaceWith(time_element);
 
-          var letter1_element = document.createElement('a');
+          var letter1_element = document.createElement('p');
           letter1_element.classList.add('letter1');
-          letter1_element.id = 'time1' + t;
           letter1_element.textContent = json[i].letter1;
           clone_element.querySelector('.letter1').replaceWith(letter1_element);
 
-          var letter2_element = document.createElement('a');
+          var letter2_element = document.createElement('p');
             letter2_element.classList.add('letter2');
-            letter2_element.id = 'time2' + t;
+            letter3_element.id = 'time2' + t;
             letter2_element.textContent = json[i].letter2;
             clone_element.querySelector('.letter2').replaceWith(letter2_element);
+            
+          var letter3_element = document.createElement('a');
+            letter3_element.classList.add('letter3');
+            letter3_element.id = 'time' + t;
+            letter3_element.textContent = '詳しく見る';
+            clone_element.querySelector('.letter3').replaceWith(letter3_element);
 
 
 
@@ -1146,37 +1154,17 @@ for (var i = 0; i < elements.length; i++) {
             let Ttext5 = '大規模地震配信';
             let Ttext6 = 'Jアラートページ';
             let Ttext7 = '業務情報ページ';
-            var lettertext1Element = document.getElementById('time1');
-            var lettertext1Element1 = document.getElementById('time11');
             var lettertext1Element2 = document.getElementById('time21');
-            var lettertext2Element = document.getElementById('time2');
-            var lettertext2Element1 = document.getElementById('time12');
             var lettertext2Element2 = document.getElementById('time22');
-            var lettertext3Element = document.getElementById('time3');
-            var lettertext3Element1 = document.getElementById('time13');
             var lettertext3Element2 = document.getElementById('time23');
-            var lettertext4Element = document.getElementById('time4');
-            var lettertext4Element1 = document.getElementById('time14');
             var lettertext4Element2 = document.getElementById('time24');
-            var lettertext5Element = document.getElementById('time5');
-            var lettertext5Element1 = document.getElementById('time15');
             var lettertext5Element2 = document.getElementById('time25');
         
-            var lettertext1 = lettertext1Element.textContent;
-            var lettertext11 = lettertext1Element1.textContent;
-            var lettertext12 = lettertext1Element2.textContent;
-            var lettertext2 = lettertext2Element.textContent;
-            var lettertext21 = lettertext2Element1.textContent;
-            var lettertext22 = lettertext2Element2.textContent;
-            var lettertext3t = lettertext3Element.textContent;
-            var lettertext31 = lettertext3Element1.textContent;
-            var lettertext32 = lettertext3Element2.textContent;
-            var lettertext4 = lettertext4Element.textContent;
-            var lettertext41 = lettertext4Element1.textContent;
-            var lettertext42 = lettertext4Element2.textContent;
-            var lettertext5 = lettertext5Element.textContent;
-            var lettertext51 = lettertext5Element1.textContent;
-            var lettertext52 = lettertext5Element2.textContent;
+            var lettertext1 = lettertext1Element2.textContent;
+            var lettertext2 = lettertext2Element2.textContent;
+            var lettertext3 = lettertext3Element2.textContent;
+            var lettertext4 = lettertext4Element2.textContent;
+            var lettertext5 = lettertext5Element2.textContent;
 
             if (lettertext1.includes(Ttext1)) {
                 link1.href = url1;

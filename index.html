@@ -1104,6 +1104,28 @@ var api_url = 'https://script.google.com/macros/s/AKfycbxzgEeiR-5Ha_zlyRutxKxLdf
             clone_element.querySelector('.letter2').replaceWith(letter2_element);
 
 
+
+
+
+          table_body.appendChild(clone_element);
+        }
+      }
+      // 特定のクラス名を持つ要素を取得
+var elements = document.getElementsByClassName('js-based');
+
+// 要素にスタイルを適用
+for (var i = 0; i < elements.length; i++) {
+  var element = elements[i];
+  element.style.display = 'none';
+}
+// 特定のクラス名を持つ要素を取得
+var elements = document.getElementsByClassName('show');
+
+// 要素のスタイルから display: none; を削除
+for (var i = 0; i < elements.length; i++) {
+  var element = elements[i];
+  element.style.display = '';
+            }
             var link = document.getElementById('time' + t);
             let url1 = 'https://saigaikinkyuu.github.io/site-homepage/';
             let url2 = 'https://saigaikinkyuu.github.io/site-earthquake/';
@@ -1141,28 +1163,6 @@ var api_url = 'https://script.google.com/macros/s/AKfycbxzgEeiR-5Ha_zlyRutxKxLdf
                 link.href = url8;
             }
 
-
-
-
-          table_body.appendChild(clone_element);
-        }
-      }
-      // 特定のクラス名を持つ要素を取得
-var elements = document.getElementsByClassName('js-based');
-
-// 要素にスタイルを適用
-for (var i = 0; i < elements.length; i++) {
-  var element = elements[i];
-  element.style.display = 'none';
-}
-// 特定のクラス名を持つ要素を取得
-var elements = document.getElementsByClassName('show');
-
-// 要素のスタイルから display: none; を削除
-for (var i = 0; i < elements.length; i++) {
-  var element = elements[i];
-  element.style.display = '';
-            }
 
     });
 }

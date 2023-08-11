@@ -1121,19 +1121,19 @@ var api_url = 'https://script.google.com/macros/s/AKfycbxzgEeiR-5Ha_zlyRutxKxLdf
             let Ttext7 = '業務情報ページ';
 
                           var lettertext = json[i].letter;
-          if (lettertext.test(Ttext1)) {
+          if (lettertext.indexOf(Ttext1) !==-1) {
               link.setAttribute('href', url1);
-          }else if (lettertext.test(Ttext2)) {
+          }else if (lettertext.indexOf(Ttext2) !==-2) {
               link.setAttribute('href', url2);
-          }else if (lettertext.test(Ttext3)) {
+          }else if (lettertext.indexOf(Ttext3) !==-3) {
               link.setAttribute('href', url3);
-          }else if (lettertext.test(Ttext4)) {
+          }else if (lettertext.indexOf(Ttext4) !==-4) {
               link.setAttribute('href', url4);
-          }else if (lettertext.test(Ttext5)) {
+          }else if (lettertext.indexOf(Ttext5) !==-5) {
               link.setAttribute('href', url5);
-          }else if (lettertext.test(Ttext6)) {
+          }else if (lettertext.indexOf(Ttext6) !==-6) {
               link.setAttribute('href', url6);
-          }else if (lettertext.test(Ttext7)) {
+          }else if (lettertext.indexOf(Ttext7) !==-7) {
               link.setAttribute('href', url7);
           }else{
               link.setAttribute('href', url8);

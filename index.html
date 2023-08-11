@@ -1091,13 +1091,13 @@ var api_url = 'https://script.google.com/macros/s/AKfycbxzgEeiR-5Ha_zlyRutxKxLdf
           time_element.textContent = formattedTime;
           clone_element.querySelector('.time').replaceWith(time_element);
 
-          var letter1_element = document.createElement('1');
+          var letter1_element = document.createElement('a');
           letter1_element.classList.add('letter1');
           letter1_element.id = 'time' + t;
           letter1_element.textContent = json[i].letter1;
           clone_element.querySelector('.letter1').replaceWith(letter1_element);
 
-          var letter2_element = document.createElement('1');
+          var letter2_element = document.createElement('a');
           letter2_element.classList.add('letter2');
           letter2_element.id = 'time' + t;
           letter2_element.textContent = json[i].letter2;

@@ -1112,21 +1112,28 @@ var api_url = 'https://script.google.com/macros/s/AKfycbxzgEeiR-5Ha_zlyRutxKxLdf
             let url6 = 'https://saigaikinkyuu.github.io/site-Jalert/';
             let url7 = 'https://saigaikinkyuu.github.io/site-business/';
             let url8 = '#';
+            let Ttext1 = 'ホーム';
+            let Ttext2 = '地震情報掲載ページ';
+            let Ttext3 = '避難情報・気象警報';
+            let Ttext4 = '利用規約';
+            let Ttext5 = '大規模地震配信';
+            let Ttext6 = 'Jアラートページ';
+            let Ttext7 = '業務情報ページ';
 
                           var lettertext = json[i].letter;
-          if (lettertext.indexOf('ホーム')) {
+          if (lettertext.test(Ttext1)) {
               link.setAttribute('href', url1);
-          }else if (lettertext.indexOf('地震情報掲載ページ')) {
+          }else if (lettertext.test(Ttext2)) {
               link.setAttribute('href', url2);
-          }else if (lettertext.indexOf('気象情報・避難情報ページ')) {
+          }else if (lettertext.test(Ttext3)) {
               link.setAttribute('href', url3);
-          }else if (lettertext.indexOf('利用規約')) {
+          }else if (lettertext.test(Ttext4)) {
               link.setAttribute('href', url4);
-          }else if (lettertext.indexOf('大規模地震配信')) {
+          }else if (lettertext.test(Ttext5)) {
               link.setAttribute('href', url5);
-          }else if (lettertext.indexOf('Jアラートページ')) {
+          }else if (lettertext.test(Ttext6)) {
               link.setAttribute('href', url6);
-          }else if (lettertext.indexOf('業務情報ページ')) {
+          }else if (lettertext.test(Ttext7)) {
               link.setAttribute('href', url7);
           }else{
               link.setAttribute('href', url8);

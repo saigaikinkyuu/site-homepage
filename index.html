@@ -1101,16 +1101,33 @@ var api_url = 'https://script.google.com/macros/s/AKfycbxzgEeiR-5Ha_zlyRutxKxLdf
           clone_element.querySelector('.letter1').replaceWith(letter1_element);
 
           var letter2_element = document.createElement('p');
-            letter2_element.classList.add('letter2');
-            letter2_element.id = 'time2' + t;
-            letter2_element.textContent = json[i].letter2;
-            clone_element.querySelector('.letter2').replaceWith(letter2_element);
-            
-          var letter3_element = document.createElement('a');
-            letter3_element.classList.add('letter3');
-            letter3_element.id = 'time' + t;
-            letter3_element.textContent = '詳しく見る';
-            clone_element.querySelector('.letter3').replaceWith(letter3_element);
+letter2_element.classList.add('letter2');
+letter2_element.id = 'time2' + t;
+letter2_element.textContent = json[i].letter2;
+clone_element.querySelector('.letter2').replaceWith(letter2_element);
+
+var letter3_element = document.createElement('a');
+letter3_element.classList.add('letter3');
+letter3_element.id = 'time' + t;
+letter3_element.textContent = '詳しく見る';
+if (json[i].letter2.includes('ホーム')) {
+    letter3_element.href = 'https://saigaikinkyuu.github.io/site-homepage/';
+}else if (json[i].letter2.includes('地震情報掲載ページ')) {
+    letter3_element.href = 'https://saigaikinkyuu.github.io/site-earthquake/';
+}else if (json[i].letter2.includes('避難情報・気象警報')) {
+    letter3_element.href = 'https://saigaikinkyuu.github.io/site-weather/';
+}else if (json[i].letter2.includes('利用規約')) {
+    letter3_element.href = 'https://saigaikinkyuu.github.io/site-agreement/';
+}else if (json[i].letter2.includes('大規模地震配信')) {
+    letter3_element.href = 'https://saigaikinkyuu.github.io/site-elive/';
+}else if (json[i].letter2.includes('Jアラートページ')) {
+    letter3_element.href = 'https://saigaikinkyuu.github.io/site-Jalert/';
+}else if (json[i].letter2.includes('業務情報ページ')) {
+    letter3_element.href = 'https://saigaikinkyuu.github.io/site-business/';
+}else {
+    letter3_element.href = 'https://saigaikinkyuu.github.io/site-homepage-404/';
+}
+clone_element.querySelector('.letter3').replaceWith(letter3_element);
 
 
 

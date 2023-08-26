@@ -57,19 +57,19 @@ letter3_element.classList.add('letter3');
 letter3_element.id = 'time' + t;
 letter3_element.textContent = '詳しく見る';
 if (json[i].letter2.includes('ホーム')) {
-    letter3_element.href = 'https://saigaikinkyuu.github.io/site-homepage/';
+    letter3_element.href = 'https://jkisyou.com';
 }else if (json[i].letter2.includes('地震情報掲載ページ')) {
-    letter3_element.href = 'https://saigaikinkyuu.github.io/site-earthquake/';
+    letter3_element.href = 'https://earthquake.kisyou.com';
 }else if (json[i].letter2.includes('避難情報・気象警報')) {
-    letter3_element.href = 'https://saigaikinkyuu.github.io/site-weather/';
+    letter3_element.href = 'https://weather.jkisyou.com';
 }else if (json[i].letter2.includes('利用規約')) {
-    letter3_element.href = 'https://saigaikinkyuu.github.io/site-agreement/';
+    letter3_element.href = 'https://agreement.jkisyou.com';
 }else if (json[i].letter2.includes('大規模地震配信')) {
-    letter3_element.href = 'https://saigaikinkyuu.github.io/site-elive/';
+    letter3_element.href = 'https://elive.jkisyou.com';
 }else if (json[i].letter2.includes('Jアラートページ')) {
-    letter3_element.href = 'https://saigaikinkyuu.github.io/site-Jalert/';
+    letter3_element.href = 'https://jalert.jkisyou.com';
 }else if (json[i].letter2.includes('業務情報ページ')) {
-    letter3_element.href = 'https://saigaikinkyuu.github.io/site-business/';
+    letter3_element.href = 'https://business.jkisyou.com';
 }else {
     letter3_element.href = 'https://saigaikinkyuu.github.io/site-homepage-404/';
 }
